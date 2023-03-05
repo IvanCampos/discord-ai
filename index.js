@@ -12,10 +12,10 @@ const client = new Client({
   ],
 });
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAIApi(new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+  })
+);
 
 client.on("messageCreate", async function (message) {
   if (message.author.bot) return;
@@ -33,10 +33,10 @@ client.on("messageCreate", async function (message) {
     return message.reply(content);
 
   } catch (err) {
-    console.error(err);
     return message.reply(
       "As an AI robot, I errored out."
     );
   }
 });
+
 client.login(process.env.BOT_TOKEN);
