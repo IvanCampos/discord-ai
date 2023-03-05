@@ -19,15 +19,12 @@ const openai = new OpenAIApi(configuration);
 
 client.on("messageCreate", async function (message) {
   if (message.author.bot) return;
-
-  const systemMessage = "You are a helpful assistant who responds succinctly";
   
   try {
-
     const response = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [
-            {role: "system", content: systemMessage},
+            {role: "system", content: "You are a helpful assistant who responds succinctly"},
             {role: "user", content: message.content}
         ],
       });
