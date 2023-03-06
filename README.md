@@ -7,6 +7,7 @@ Add a .env file with:
 
 
 OpenAI API Key: https://platform.openai.com/account/api-keys
+
 Bot Token: https://discord.com/developers/applications
 
 
