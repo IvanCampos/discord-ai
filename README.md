@@ -11,4 +11,4 @@ Bot Token: https://discord.com/developers/applications
 
 
 
-run locally with `node index`
+run locally with `node index.js`
